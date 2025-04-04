@@ -68,5 +68,11 @@ GROUP BY state
 ORDER BY hospital_count DESC
 LIMIT 10;
 
+## Cloud Dashboard
+
+View the live dashboard on AWS QuickSight:
+[Healthcare Readmission Dashboard](https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/c1b0e242-7a30-4448-a77d-afda5890e77f)
+
+
 
 
