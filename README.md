@@ -1,26 +1,26 @@
-# 🏥 Healthcare Readmission Analysis 📊
+# 🏥 Healthcare Readmission Analysis 
 
 This project explores U.S. hospital data to uncover insights about hospital distribution, types, and ownership across states. Using real-world datasets, the goal is to build a clean and visual exploratory analysis, setting the foundation for advanced analytics and cloud integration (AWS S3, Athena, QuickSight).
 
-## 🚀 Project Objectives
+## Project Objectives
 - Analyze hospital distribution by state
 - Examine hospital ownership models
 - Visualize hospital types and ratings
 - Prepare data for cloud pipeline (AWS)
 
-## 🗂️ Project Structure
+## Project Structure
 
 - data/ : Dataset(s) from CMS
 - notebooks/ : Jupyter Notebooks with data cleaning and analysis
 - outputs/ : Visualizations and exported reports
 
-## 📊 Visualizations
+## Visualizations
 - Top states by number of hospitals
 - Hospital types distribution
 - Ownership analysis
 - PDF report included
 
-## 🚀 Next Steps
+## Next Steps
 - Upload dataset to AWS S3
 - Use AWS Athena for query analysis
 - Build QuickSight dashboard
@@ -31,7 +31,7 @@ This project explores U.S. hospital data to uncover insights about hospital dist
 - Git & GitHub for version control
 - AWS (planned): S3, Athena, QuickSight
 
-## 📊 Visualizations
+## Visualizations
 
 ### Top 10 States by Number of Hospitals
 ![Top States](outputs/top_states_hospitals.png)
@@ -42,7 +42,7 @@ This project explores U.S. hospital data to uncover insights about hospital dist
 ## 📄 Report
 - [EDA Report PDF](outputs/EDA_Hospital_info.pdf)
 
-## 🚀 Next Steps
+## Next Steps
 - Upload cleaned dataset to AWS S3
 - Query with AWS Athena
 - Build visual dashboard in AWS QuickSight
@@ -50,5 +50,23 @@ This project explores U.S. hospital data to uncover insights about hospital dist
 
 ## 🤝 Connect
 Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/shazia-kashif-958621262/) for collaboration or feedback!
+## ☁️ Cloud Extension
+
+This project has been extended to the cloud using AWS services for scalable analytics.
+
+-  Uploaded cleaned hospital dataset to **Amazon S3**
+-  Created external table in **AWS Athena** to query directly from S3
+-  Ran queries in Athena to analyze hospital distribution across states
+- Results exported for future visualization in **AWS QuickSight**
+
+### Athena Query Example
+
+```sql
+SELECT state, COUNT(*) AS hospital_count
+FROM healthcare_readmission
+GROUP BY state
+ORDER BY hospital_count DESC
+LIMIT 10;
+
 
 
