@@ -59,14 +59,6 @@ This project has been extended to the cloud using AWS services for scalable anal
 -  Ran queries in Athena to analyze hospital distribution across states
 - Results exported for future visualization in **AWS QuickSight**
 
-### Athena Query Example
-
-```sql
-SELECT state, COUNT(*) AS hospital_count
-FROM healthcare_readmission
-GROUP BY state
-ORDER BY hospital_count DESC
-LIMIT 10;
 
 ## Cloud Dashboard
 
