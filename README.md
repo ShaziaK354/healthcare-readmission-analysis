@@ -97,7 +97,28 @@ This project analyzes U.S. hospital data to explore readmission trends across st
 ## Connect
 Feel free to explore my full project and code on GitHub: [https://github.com/ShaziaK354/healthcare-readmission-analysis/tree/main]
 
+## Day 4 Progress
+-  Simulated Redshift query for healthcare readmission data
+- Visualized state-level insights
+- Documented HIPAA essentials for healthcare data privacy
 
+##  Progress Day 5 
+
+### Analysis Update:
+- Conducted hospital-level analysis to identify facilities with the highest "worse" readmission measures.
+- Visualized the top 10 hospitals with high readmission concerns.
+
+### New Visualization:
+![Top 10 Hospitals Readmission](output/day5_hospital_readmission_chart.png)
+
+### Insights:
+- ADVENTHEALTH ORLANDO emerged as the top hospital with higher readmission indicators.
+- Several other hospitals across different states show significant readmission concerns.
+- This analysis helps to identify target areas for readmission reduction strategies.
+
+### Next Steps:
+- Continue with AWS Glue understanding and simulate ETL flow.
+- Prepare dashboard for presentation and storytelling.
 
 
 
