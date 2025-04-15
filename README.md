@@ -120,5 +120,24 @@ Feel free to explore my full project and code on GitHub: [https://github.com/Sha
 - Continue with AWS Glue understanding and simulate ETL flow.
 - Prepare dashboard for presentation and storytelling.
 
+---
+
+## 📄 AWS Project Summary
+
+This project demonstrates end-to-end data analytics using AWS services for a CMS Hospital Readmission Analysis. It covers:
+
+- Data upload to Amazon S3
+- Data cataloging using AWS Glue Crawler
+- Querying using Amazon Athena
+- Visualization using Amazon QuickSight
+
+You can view the full documentation and cleanup steps in the summary below:
+
+ **[Download AWS Project Summary (PDF)](docs/aws_readmission_project_summary.pdf)**
+
+---
+
+
+
 
 
