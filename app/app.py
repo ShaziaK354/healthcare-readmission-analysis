@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Load model
-model = joblib.load("../models/logistic_readmission_model.pkl")
+model = joblib.load("C:/Users/shazi/Healthcare_Project/models/logistic_readmission_model.pkl")
 
 # Custom title banner
 st.markdown("""
@@ -41,6 +41,53 @@ if st.button("🔍 Predict Readmission Risk"):
         st.error(f"⚠️ High Readmission Risk! | Probability: **{probability:.2f}**")
     else:
         st.success(f"✅ Low Readmission Risk! | Probability: **{probability:.2f}**")
+        
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_csv("C:/Users/shazi/Healthcare_Project/output/hospital_readmission_summary_v3.csv")
+
+st.markdown("---")
+st.subheader("📊 Readmission Summary Dashboard")
+
+# Preview data
+if st.checkbox("🔍 Show raw data sample"):
+    st.dataframe(df.head(10))
+
+# Grouped bar chart
+st.markdown("### 🔁 Average Readmission Metrics by Hospital Type")
+
+#grouped = df.groupby("hospital_type")["count_of_readm_measures_worse"].mean().sort_values(ascending=False)
+grouped = df.groupby("facility_name")["count_of_readm_measures_worse"].mean().sort_values(ascending=False)
+
+
+fig, ax = plt.subplots()
+sns.barplot(x=grouped.values, y=grouped.index, ax=ax, palette="Blues_r")
+ax.set_xlabel("Average Readmission Measures Rated Worse")
+ax.set_ylabel("Hospital Type")
+
+st.pyplot(fig)
+
+st.markdown("---")
+st.markdown(" Built by Shazia & Ace • Powered by Streamlit •  GitHub: [healthcare-readmission-analysis](https://github.com/ShaziaK354/healthcare-readmission-analysis)")
+
+csv = df.to_csv(index=False).encode('utf-8')
+st.download_button(
+    label=" Download Readmission Data",
+    data=csv,
+    file_name='hospital_readmission_summary.csv',
+    mime='text/csv',
+)
+
+with st.sidebar:
+    st.image("https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png", width=120)
+    st.markdown("##  Healthcare Readmission")
+    st.markdown(" Built with Streamlit")
+    st.markdown(" Project: Predicting Hospital Readmission")
+    st.markdown(" [View on GitHub](https://github.com/ShaziaK354/healthcare-readmission-analysis)")
+
 
 
 
